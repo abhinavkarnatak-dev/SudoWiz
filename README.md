@@ -61,10 +61,6 @@ Make sure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.co
 
 Contributions are welcome! Please fork the repository and submit a pull request with your changes.
 
-### License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
-
 ## Acknowledgments
 
 - **[React](https://reactjs.org/)** - JavaScript library for building user interfaces

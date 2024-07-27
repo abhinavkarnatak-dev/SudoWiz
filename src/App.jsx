@@ -11,9 +11,9 @@ const App = () => {
   };
 
   return (
-    <div className="sm:h-lvh bg-zinc-800 mx-auto pt-4 flex flex-col items-center">
+    <div className="min-h-screen bg-zinc-800 mx-auto pt-4 flex flex-col items-center">
       <div className="flex justify-center mt-2 mb-5">
-        <img src={logo} alt="SudoWiz Logo" className="h-30" />
+        <img src={logo} alt="SudoWiz Logo" className="h-20 sm:h-20 md:h-30 lg:h-30" />
       </div>
       <div>
         <SudokuGrid initialGrid={grid} />
