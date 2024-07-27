@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SudokuGrid from './components/SudokuGrid';
+import Footer from './components/Footer';
 import logo from './logo/logo.png'
 import './index.css';
 
@@ -17,6 +18,9 @@ const App = () => {
       </div>
       <div>
         <SudokuGrid initialGrid={grid} />
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );
