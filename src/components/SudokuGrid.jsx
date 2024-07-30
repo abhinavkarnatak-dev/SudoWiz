@@ -99,6 +99,8 @@ const SudokuGrid = ({ initialGrid }) => {
                             ${rowIndex === 8 ? 'border-b-4 border-gray-500' : ''}
                             ${colIndex !== 8 ? 'border-r-0 border-gray-500' : ''}
                             ${rowIndex !== 8 ? 'border-b-0 border-gray-500' : ''}
+                            ${rowIndex % 2 === 0 && colIndex % 2 === 0 ? 'bg-gray-300' : ''}
+                            ${rowIndex % 2 !== 0 && colIndex % 2 !== 0 ? 'bg-gray-300' : ''}
                             ${solvedCells.some(([r, c]) => r === rowIndex && c === colIndex) ? 'bg-green-300' : ''}
                             ${focusedCell?.row === rowIndex && focusedCell?.col === colIndex ? 'bg-orange-300' : ''}
                             `}
