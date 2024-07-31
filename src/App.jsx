@@ -7,10 +7,6 @@ import './index.css';
 const App = () => {
   const [grid, setGrid] = useState(Array(9).fill().map(() => Array(9).fill('')));
 
-  const handleGridExtracted = (extractedGrid) => {
-    setGrid(extractedGrid);
-  };
-
   return (
     <div className="min-h-screen bg-zinc-800 mx-auto pt-4 flex flex-col items-center">
       <div className="flex justify-center mt-2 mb-5">

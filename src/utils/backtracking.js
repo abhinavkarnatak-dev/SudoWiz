@@ -1,4 +1,4 @@
-const isSafeToPlaceNumber = (grid, row, col, num) => {
+const doesNotExist = (grid, row, col, num) => {
   for (let i = 0; i < 9; i++) {
     if (grid[row][i] === num || grid[i][col] === num) return false;
   }
@@ -14,6 +14,7 @@ const isSafeToPlaceNumber = (grid, row, col, num) => {
   return true;
 };
 
+// Solve the Sudoku using backtracking
 const solveSudoku = (grid, solvedCells = []) => {
   const findEmptyCell = (grid) => {
     for (let row = 0; row < 9; row++) {
@@ -28,7 +29,7 @@ const solveSudoku = (grid, solvedCells = []) => {
   if (row === -1 && col === -1) return true;
 
   for (let num = 1; num <= 9; num++) {
-    if (isSafeToPlaceNumber(grid, row, col, num.toString())) {
+    if (doesNotExist(grid, row, col, num.toString())) {
       grid[row][col] = num.toString();
       solvedCells.push([row, col]);
       if (solveSudoku(grid, solvedCells)) return true;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import solveSudoku from '../utils/backtracking';
 
+// Main grid component
 const SudokuGrid = ({ initialGrid }) => {
   const [grid, setGrid] = useState(Array(9).fill().map(() => Array(9).fill('')));
   const [solvedCells, setSolvedCells] = useState([]);
@@ -8,12 +9,14 @@ const SudokuGrid = ({ initialGrid }) => {
   const [isSolved, setIsSolved] = useState(false);
   const inputRefs = useRef(Array(9).fill().map(() => Array(9).fill(null)));
 
+  // Initial grid
   useEffect(() => {
     if (initialGrid) {
       setGrid(initialGrid);
     }
   }, [initialGrid]);
 
+  // Numeric values
   const handleChange = (rowIndex, colIndex, value) => {
     if (/^[1-9]$/.test(value) || value === '') {
       const updatedGrid = grid.map((row, rIdx) =>
@@ -23,6 +26,7 @@ const SudokuGrid = ({ initialGrid }) => {
     }
   };
 
+  // Solve button functionality
   const handleSolve = () => {
     const gridCopy = grid.map(row => row.slice());
     const solvedCellsList = [];
@@ -39,6 +43,7 @@ const SudokuGrid = ({ initialGrid }) => {
     }
   };
 
+  // Reset button functionality
   const handleReset = () => {
     setGrid(Array(9).fill().map(() => Array(9).fill('')));
     setSolvedCells([]);
@@ -46,6 +51,7 @@ const SudokuGrid = ({ initialGrid }) => {
     setIsSolved(false);
   };
 
+  // Keyboard functionality
   const handleKeyDown = (e, rowIndex, colIndex) => {
     if (isSolved) return;
 
@@ -73,11 +79,13 @@ const SudokuGrid = ({ initialGrid }) => {
     }
   };
 
+  // Orange background on focus functionality
   const handleFocus = (rowIndex, colIndex) => {
     if (isSolved) return;
     setFocusedCell({ row: rowIndex, col: colIndex });
   };
 
+  // Main div
   return (
     <div className="flex flex-col items-center">
       <div className="border-4 border-black p-1">

@@ -1,5 +1,6 @@
 import React from 'react'
 
+// Footer component
 function Footer() {
     return (
         <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
