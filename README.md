@@ -45,7 +45,7 @@ Make sure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.co
    ```
 4. Start the development server:
    ```bash
-   npm start
+   npm run dev
    ```
 5. Open your browser and navigate to http://localhost:3000 to see the app in action.
 <br>
